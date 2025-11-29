@@ -2,12 +2,17 @@ package com.anibal.springboot.di.app.springboot_di.services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.anibal.springboot.di.app.springboot_di.models.Product;
 import com.anibal.springboot.di.app.springboot_di.repositories.ProductRepositoryImpl;
 
+@Component
 public class ProductServiceImpl implements ProductService {
 
-    private ProductRepositoryImpl productRepository = new ProductRepositoryImpl();
+    @Autowired
+    private ProductRepositoryImpl productRepository;
 
     @Override
     public List<Product> findAll() {
@@ -30,3 +35,4 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.findById(id);
     }
 }
+ 
