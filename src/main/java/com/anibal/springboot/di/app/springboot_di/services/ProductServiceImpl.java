@@ -2,7 +2,7 @@ package com.anibal.springboot.di.app.springboot_di.services;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.anibal.springboot.di.app.springboot_di.models.Product;
@@ -11,7 +11,8 @@ import com.anibal.springboot.di.app.springboot_di.repositories.ProductRepository
 @Service
 public class ProductServiceImpl implements ProductService {
     private ProductRepository productRepository;
-    public ProductServiceImpl(ProductRepository productRepository) {
+    
+     public ProductServiceImpl(@Qualifier("productList") ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 
@@ -24,9 +25,10 @@ public class ProductServiceImpl implements ProductService {
                 // newProduct.setId(p.getId());
                 // newProduct.setName(p.getName());
                 // newProduct.setPrice(newPrice.longValue());
-                Product newProduct = (Product)p.clone();
-                newProduct.setPrice(newPrice.longValue());
-                return newProduct;
+          
+ 
+                p.setPrice(newPrice.longValue());
+                return p;
             })
             .toList();
     }

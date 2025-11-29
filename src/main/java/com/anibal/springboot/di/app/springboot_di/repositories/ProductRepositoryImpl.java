@@ -4,10 +4,12 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.web.context.annotation.SessionScope;
 
 import com.anibal.springboot.di.app.springboot_di.models.Product;
 
-@Repository
+@SessionScope
+@Repository("productList")
 public class ProductRepositoryImpl implements ProductRepository {
 
     private List<Product> data;
