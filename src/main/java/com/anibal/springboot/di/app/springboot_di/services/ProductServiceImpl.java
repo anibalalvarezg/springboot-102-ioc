@@ -3,16 +3,16 @@ package com.anibal.springboot.di.app.springboot_di.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.anibal.springboot.di.app.springboot_di.models.Product;
-import com.anibal.springboot.di.app.springboot_di.repositories.ProductRepositoryImpl;
+import com.anibal.springboot.di.app.springboot_di.repositories.ProductRepository;
 
-@Component
+@Service
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
-    private ProductRepositoryImpl productRepository;
+    private ProductRepository productRepository;
 
     @Override
     public List<Product> findAll() {
