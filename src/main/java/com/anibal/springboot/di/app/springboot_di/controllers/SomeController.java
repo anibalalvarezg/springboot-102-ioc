@@ -18,8 +18,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/api/some")
 public class SomeController {
     
-    @Autowired
     private ProductService productService;
+
+    public SomeController(ProductService productService) {
+        this.productService = productService;
+    }
 
     @GetMapping("/all")
     public List<Product> getProducts() {

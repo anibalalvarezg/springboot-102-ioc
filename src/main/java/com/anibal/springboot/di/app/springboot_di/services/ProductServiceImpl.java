@@ -10,9 +10,10 @@ import com.anibal.springboot.di.app.springboot_di.repositories.ProductRepository
 
 @Service
 public class ProductServiceImpl implements ProductService {
-
-    @Autowired
     private ProductRepository productRepository;
+    public ProductServiceImpl(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
 
     @Override
     public List<Product> findAll() {
