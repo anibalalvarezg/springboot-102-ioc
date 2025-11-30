@@ -12,12 +12,12 @@ import com.anibal.springboot.di.app.springboot_di.repositories.ProductRepository
 
 @Service
 public class ProductServiceImpl implements ProductService {
-    @Autowired
     private Environment environment;
     private ProductRepository productRepository;
     
-     public ProductServiceImpl(@Qualifier("productList") ProductRepository productRepository) {
+     public ProductServiceImpl(@Qualifier("productList") ProductRepository productRepository, Environment environment) {
         this.productRepository = productRepository;
+        this.environment = environment;
     }
 
     @Override
