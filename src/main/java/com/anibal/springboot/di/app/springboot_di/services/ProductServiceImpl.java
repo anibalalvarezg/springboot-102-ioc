@@ -2,8 +2,6 @@ package com.anibal.springboot.di.app.springboot_di.services;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +13,7 @@ public class ProductServiceImpl implements ProductService {
     private Environment environment;
     private ProductRepository productRepository;
     
-     public ProductServiceImpl(@Qualifier("productList") ProductRepository productRepository, Environment environment) {
+     public ProductServiceImpl(ProductRepository productRepository, Environment environment) {
         this.productRepository = productRepository;
         this.environment = environment;
     }

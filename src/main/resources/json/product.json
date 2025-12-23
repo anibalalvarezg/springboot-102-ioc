@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Memoria corsair 32",
+        "price": 357
+    },
+    {
+        "id": 2,
+        "name": "Cpu Intel Core i9",
+        "price": 1011
+    },
+    {
+        "id": 3,
+        "name": "Teclado Razer Mini 60%",
+        "price": 214
+    },
+    {
+        "id": 4,
+        "name": "Monitor LG 27 Pulgadas",
+        "price": 476
+    }
+]
